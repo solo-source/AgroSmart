@@ -16,4 +16,7 @@
     <string name="cloudy">Cloudy</string>
     <string name="_27_c">27°C</string>
     <string name="weather_activity_title">Weather Forecast</string>
+    <string name="back_button_description">Go back</string>
+    <string name="crop_info_title">Crop Information</string>
+    <string name="lorem_ipsum">Lorem ipsum</string>
 </resources>
