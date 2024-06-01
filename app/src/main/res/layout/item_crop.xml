@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_crop.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="crop"
+            type="com.example.myapplicationsem2.CropInfoActivity.Crop" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Crop Image -->
+            <ImageView
+                android:id="@+id/cropImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/defaultcrop512" />
+
+            <!-- Crop Name -->
+            <TextView
+                android:id="@+id/cropName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{crop.name}"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="8dp" />
+
+            <!-- Crop Description -->
+            <TextView
+                android:id="@+id/cropDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{crop.description}"
+                android:textSize="14sp"
+                android:textColor="@color/gray"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <!-- Detailed Information (Initially Hidden) -->
+            <TextView
+                android:id="@+id/detailedInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detailed_info_placeholder"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:padding="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

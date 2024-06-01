@@ -28,7 +28,12 @@
         <!-- CropInfoActivity -->
         <activity
             android:name=".CropInfoActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myapplicationsem2.SHOW_CROP_INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- Weather Activity -->
         <activity
