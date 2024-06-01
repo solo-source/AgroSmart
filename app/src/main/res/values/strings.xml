@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">MyApplication(Sem2)</string>
+    <string name="app_name">Farm Hub</string>
+    <string name="crop_info">Crop Info</string>
+    <string name="disease_diagnosis">Disease Diagnosis</string>
+    <string name="forum">Forum</string>
+    <string name="market_prices">Market Prices</string>
+    <string name="notifications">Notifications</string>
+    <string name="weather">Weather</string>
+    <string name="search_crops_diseases_etc">Search crops, diseases, etc.</string>
+    <string name="sunny">Sunny</string>
+    <string name="_28_c">28°C</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="show_forecast">Show Forecast</string>
+    <string name="wind_speed_10_km_h">Wind Speed: 10 km/h</string>
+    <string name="humidity_60">Humidity: 60%</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="_27_c">27°C</string>
+    <string name="weather_activity_title">Weather Forecast</string>
 </resources>
