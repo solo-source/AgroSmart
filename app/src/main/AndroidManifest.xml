@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,9 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
-        <activity
-            android:name=".CropInfoActivity"
-            android:exported="false" />
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -26,6 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- CropInfoActivity -->
+        <activity
+            android:name=".CropInfoActivity"
+            android:exported="false" />
+
+        <!-- Weather Activity -->
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="true"
+            android:label="@string/weather_activity_title">
+            <intent-filter>
+                <action android:name="com.example.myapplicationsem2.SHOW_WEATHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

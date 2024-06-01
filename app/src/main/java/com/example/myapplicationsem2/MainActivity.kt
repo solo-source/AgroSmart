@@ -1,76 +1,82 @@
 package com.example.myapplicationsem2
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.gridlayout.widget.GridLayout
+import com.example.myapplicationsem2.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Initialize the search bar
-        val searchBar: EditText = findViewById(R.id.search_bar)
-
-        // Initialize the weather widget elements
-        val weatherIcon: ImageView = findViewById(R.id.weather_icon)
-        val weatherTemp: TextView = findViewById(R.id.weather_temp)
-        val weatherDescription: TextView = findViewById(R.id.weather_description)
-
-        // Initialize the quick access buttons
-        val btnCropInfo: Button = findViewById(R.id.btn_crop_info)
-        val btnMarketPrices: Button = findViewById(R.id.btn_market_prices)
-        val btnWeather: Button = findViewById(R.id.btn_weather)
-        val btnForum: Button = findViewById(R.id.btn_forum)
-        val btnDiseaseDiagnosis: Button = findViewById(R.id.btn_disease_diagnosis)
-        val btnNotifications: Button = findViewById(R.id.btn_notifications)
-
-        // Handle quick access button clicks
-        btnCropInfo.setOnClickListener {
-            // Handle crop info button click
+        // Setup Search bar
+        binding.searchBar.setOnClickListener {
+            // Implement search functionality here
         }
 
-        btnMarketPrices.setOnClickListener {
-            // Handle market prices button click
+        // Setup Weather widget
+        binding.btnWeather.setOnClickListener {
+            val intent = Intent("com.example.myapplicationsem2.SHOW_WEATHER")
+            startActivity(intent)
         }
 
-        btnWeather.setOnClickListener {
-            // Handle weather button click
+        // Setup Crop Info button
+        binding.btnCropInfo.setOnClickListener {
+            val intent = Intent(this, CropInfoActivity::class.java)
+            startActivity(intent)
         }
 
-        btnForum.setOnClickListener {
-            // Handle forum button click
+        // Setup Market Prices button
+        binding.btnMarketPrices.setOnClickListener {
+            val intent = Intent(this, MarketPricesActivity::class.java)
+            startActivity(intent)
         }
 
-        btnDiseaseDiagnosis.setOnClickListener {
-            // Handle disease diagnosis button click
+        // Setup Forum button
+        binding.btnForum.setOnClickListener {
+            val intent = Intent(this, ForumActivity::class.java)
+            startActivity(intent)
         }
 
-        btnNotifications.setOnClickListener {
-            // Handle notifications button click
+        // Setup Disease button
+        binding.btnDiseaseDiagnosis.setOnClickListener {
+            val intent = Intent(this, DiseaseActivity::class.java)
+            startActivity(intent)
         }
 
-        // Initialize and set up the bottom navigation view
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
+        // Setup Notifications button
+        binding.btnNotifications.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Setup Bottom Navigation
+        val bottomNavigationView: BottomNavigationView = binding.bottomNavView
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    // Handle home navigation
+                    // Handle home action - Reload current activity
+                    Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_profile -> {
-                    // Handle profile navigation
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_settings -> {
-                    // Handle settings navigation
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
