@@ -14,6 +14,7 @@ material = "1.12.0"
 appcompat = "1.6.1"
 activity = "1.8.0"
 
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -34,6 +35,7 @@ androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", vers
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
