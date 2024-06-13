@@ -22,7 +22,7 @@
 
             <!-- Crop Image -->
             <ImageView
-                android:id="@+id/cropImage"
+                android:id="@+id/cropImageMPrice"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -30,7 +30,7 @@
 
             <!-- Crop Name -->
             <TextView
-                android:id="@+id/cropName"
+                android:id="@+id/cropNameMPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{marketPrice.name}"
@@ -40,7 +40,7 @@
 
             <!-- Crop Description -->
             <TextView
-                android:id="@+id/cropDescription"
+                android:id="@+id/cropDescriptionMPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{marketPrice.description}"
@@ -52,7 +52,7 @@
 
             <!-- Current Market Price -->
             <TextView
-                android:id="@+id/currentPrice"
+                android:id="@+id/currentPriceMPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{marketPrice.currentPrice}"
@@ -62,7 +62,7 @@
 
             <!-- Detailed Information (Initially Hidden) -->
             <LinearLayout
-                android:id="@+id/detailedInfo"
+                android:id="@+id/detailedInfoMprice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

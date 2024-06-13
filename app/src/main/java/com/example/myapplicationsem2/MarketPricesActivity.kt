@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplicationsem2.databinding.ActivityMarketPricesBinding
@@ -68,6 +69,105 @@ class MarketPricesActivity : AppCompatActivity() {
                 generateSampleData()
             )
         )
+        prices.add(
+            MarketPrice(
+                "Crop 4",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 5",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 6",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 7",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 8",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 9",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 10",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 11",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 12",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
         // Add more crops as needed
         return prices
     }
@@ -116,17 +216,18 @@ class MarketPricesActivity : AppCompatActivity() {
             }
 
             fun bind(marketPrice: MarketPrice) {
-                itemBinding.cropImage.setImageResource(marketPrice.imageResId)
-                itemBinding.cropName.text = marketPrice.name
-                itemBinding.cropDescription.text = marketPrice.description
-                itemBinding.currentPrice.text = marketPrice.currentPrice
-                itemBinding.detailedInfo.visibility = View.GONE
+                itemBinding.cropImageMPrice.setImageResource(marketPrice.imageResId)
+                itemBinding.cropNameMPrice.text = marketPrice.name
+                itemBinding.cropDescriptionMPrice.text = marketPrice.description
+                itemBinding.currentPriceMPrice.text = marketPrice.currentPrice
+                itemBinding.detailedInfoMprice.visibility = View.GONE
                 setupChart(itemBinding.priceChart, marketPrice.priceData)
+                //Toast.makeText(this@MarketPricesActivity, marketPrice.currentPrice, Toast.LENGTH_LONG).show()
             }
 
             override fun onClick(view: View?) {
-                val isVisible = itemBinding.detailedInfo.visibility == View.VISIBLE
-                itemBinding.detailedInfo.visibility = if (isVisible) View.GONE else View.VISIBLE
+                val isVisible = itemBinding.detailedInfoMprice.visibility == View.VISIBLE
+                itemBinding.detailedInfoMprice.visibility = if (isVisible) View.GONE else View.VISIBLE
             }
 
             private fun setupChart(chart: LineChart, data: List<Entry>) {
