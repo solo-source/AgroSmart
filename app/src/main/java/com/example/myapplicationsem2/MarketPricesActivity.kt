@@ -1,4 +1,5 @@
 package com.example.myapplicationsem2
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,9 +35,39 @@ class MarketPricesActivity : AppCompatActivity() {
     private fun generateMarketPrices(): List<MarketPrice> {
         // Generate sample market price data
         val prices = mutableListOf<MarketPrice>()
-        prices.add(MarketPrice("Crop 1", "Description of Crop 1", R.drawable.defaultcrop128, "₹120", generateSampleData()))
-        prices.add(MarketPrice("Crop 2", "Description of Crop 2", R.drawable.defaultcrop128, "₹115", generateSampleData()))
-        prices.add(MarketPrice("Crop 3", "Description of Crop 3", R.drawable.defaultcrop128, "₹110", generateSampleData()))
+        prices.add(
+            MarketPrice(
+                "Crop 1",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹120",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 2",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹115",
+                generateSampleData()
+            )
+        )
+        prices.add(
+            MarketPrice(
+                "Crop 3",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128,
+                "₹110",
+                generateSampleData()
+            )
+        )
         // Add more crops as needed
         return prices
     }
@@ -51,7 +82,13 @@ class MarketPricesActivity : AppCompatActivity() {
         return data
     }
 
-    data class MarketPrice(val name: String, val description: String, val imageResId: Int, val currentPrice: String, val priceData: List<Entry>)
+    data class MarketPrice(
+        val name: String,
+        val description: String,
+        val imageResId: Int,
+        val currentPrice: String,
+        val priceData: List<Entry>
+    )
 
     inner class MarketPricesAdapter(private val marketPrices: List<MarketPrice>) :
         RecyclerView.Adapter<MarketPricesAdapter.MarketPriceViewHolder>() {
