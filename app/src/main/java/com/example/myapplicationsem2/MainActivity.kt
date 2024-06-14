@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setup Crop Info button
         binding.btnCropInfo.setOnClickListener {
-            val intent = Intent(this, CropInfoActivity::class.java)
+            val intent = Intent("com.example.myapplicationsem2.SHOW_CROP_INFO")
             startActivity(intent)
         }
 
