@@ -46,6 +46,16 @@
             </intent-filter>
         </activity>
 
+        <!-- Weather Activity -->
+        <activity
+            android:name=".MarketPricesActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myapplicationsem2.SHOW_MARKET_PRICES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

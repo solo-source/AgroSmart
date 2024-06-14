@@ -60,6 +60,87 @@ class CropInfoActivity : AppCompatActivity() {
             )
         )
         // Add more crops as needed
+        crops.add(
+            Crop(
+                "Crop 4",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 5",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 6",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 7",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 8",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 9",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 10",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 11",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
+        crops.add(
+            Crop(
+                "Crop 12",
+                "What is Lorem Ipsum?\n" +
+                        "\n" +
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                R.drawable.defaultcrop128
+            )
+        )
         return crops
     }
 
