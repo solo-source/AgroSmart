@@ -9,5 +9,34 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
     <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#00E676</color>
+    <color name="colorAccentDark">#00C853</color>
+    <color name="colorAccentLight">#43A047</color>
+    <color name="colorAccentLightest">#81C784</color>
+    <color name="colorAccentDarkest">#007B00</color>
+    <color name="mintGreen">#3EB489</color>
+    <color name="scarletRed">#FF2400</color>
+    <color name="royalBlue">#3B5998</color>
+    <color name="royalBlue1">#246EE9</color>
+    <color name="mint">#90AFC5</color>
+    <color name="lemonLime">#E4EA8C</color>
+    <color name="sandStone">#F4CC70</color>
+    <color name="bruntOrange">#DE7A22</color>
+    <color name="darkSlateGray">#2F4F4F</color>
+    <color name="darkSlateGray1">#2F4F4F</color>
+    <color name="sea">#20948B</color>
+    <color name="lagoon">#6AB187</color>
+    <color name="lagoon1">#4682B4</color>
+    <color name="overcast">#F1F1F2</color>
+    <color name="warmGrey">#BCBABE</color>
+    <color name="warmGrey1">#9E9E9E</color>
+    <color name="warmGrey2">#757575</color>
+    <color name="warmGrey3">#616161</color>
+    <color name="warmGrey4">#424242</color>
+    <color name="ice">#A1D6E2</color>
+    <color name="glacierBlue">#1995AD</color>
+    <color name="primaryColor">#4CAF50</color>
+    <color name="secondaryColor">#8BC34A</color>
 
 </resources>

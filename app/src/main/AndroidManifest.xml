@@ -13,9 +13,9 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
 
-        <!-- Main Activity -->
+        <!-- Welcome Activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".WelcomeActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
@@ -25,6 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.example.myapplicationsem2.SHOW_MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- CropInfoActivity -->
         <activity
             android:name=".CropInfoActivity"
@@ -46,12 +62,22 @@
             </intent-filter>
         </activity>
 
-        <!-- Weather Activity -->
+        <!-- Market Prices Activity -->
         <activity
             android:name=".MarketPricesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.myapplicationsem2.SHOW_MARKET_PRICES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Profile Activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myapplicationsem2.SHOW_PROFILE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

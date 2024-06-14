@@ -58,10 +58,11 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun fetchWeatherData() {
-        val apiKey = "1e8ec065460fe366dac1eb2948e53acc"
-        val city = "Navi Mumbai"
-        val url = "http://api.openweathermap.org/data/2.5/forcast?q=$city&appid=$apiKey"
+        //val apiKey = "1e8ec065460fe366dac1eb2948e53acc"
+        //val city = "Navi Mumbai"
+        val url = "http://api.openweathermap.org/data/2.5/forecast?q=Mumbai,in&mode=xml&appid=1e8ec065460fe366dac1eb2948e53acc"
 
+        Toast.makeText(this@WeatherActivity, url, Toast.LENGTH_LONG).show()
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 val connection = URL(url).openConnection() as HttpURLConnection
