@@ -1,121 +1,103 @@
 package com.example.myapplicationsem2
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.myapplicationsem2.databinding.ActivityWeatherBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.URL
-import java.text.SimpleDateFormat
-import java.util.*
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.*
+import retrofit2.converter.gson.GsonConverterFactory
 
 class WeatherActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWeatherBinding
+    private lateinit var weatherService: WeatherService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Fetch weather data
-        fetchWeatherData()
+        // Initialize Retrofit
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
-        val bottomNavigationView: BottomNavigationView = binding.bottomNavView
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    // Handle home action - Reload current activity
-                    Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.nav_settings -> {
-                    val intent = Intent(this, SettingsActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
+        val client = OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .build()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.openweathermap.org/data/2.5/")
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        weatherService = retrofit.create(WeatherService::class.java)
+
+        // Fetch current weather data
+        fetchCurrentWeather()
+
+        // Fetch previous days weather data
+        fetchPreviousDaysWeather()
     }
 
-    private fun fetchWeatherData() {
-        //val apiKey = "1e8ec065460fe366dac1eb2948e53acc"
-        //val city = "Navi Mumbai"
-        val url = "http://api.openweathermap.org/data/2.5/forecast?q=Mumbai,in&mode=xml&appid=1e8ec065460fe366dac1eb2948e53acc"
+    private fun fetchCurrentWeather() {
+        val apiKey = "1e8ec065460fe366dac1eb2948e53acc"
+        val call = weatherService.getCurrentWeather("Mumbai", apiKey)
 
-        Toast.makeText(this@WeatherActivity, url, Toast.LENGTH_LONG).show()
-        GlobalScope.launch(Dispatchers.IO) {
-            try {
-                val connection = URL(url).openConnection() as HttpURLConnection
-                val response = StringBuilder()
-                val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                var line: String?
-                while (reader.readLine().also { line = it } != null) {
-                    response.append(line)
-                }
-                reader.close()
-
-                val jsonResponse = JSONObject(response.toString())
-
-                // Parse weather data
-                val temperature = jsonResponse.getJSONObject("main").getDouble("temp")
-                val weatherDescription =
-                    jsonResponse.getJSONArray("weather").getJSONObject(0).getString("description")
-                val humidity = jsonResponse.getJSONObject("main").getInt("humidity")
-                val windSpeed = jsonResponse.getJSONObject("wind").getDouble("speed")
-
-                // Update UI with weather data
-                runOnUiThread {
-                    updateWeatherUI(temperature, weatherDescription, humidity, windSpeed)
-                }
-            } catch (e: Exception) {
-                Log.e("WeatherActivity", "Error fetching weather data: ${e.message}")
-                runOnUiThread {
-                    Toast.makeText(this@WeatherActivity, "Failed to fetch weather data", Toast.LENGTH_SHORT).show()
+        call.enqueue(object : Callback<WeatherResponse> {
+            override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
+                if (response.isSuccessful) {
+                    val weatherResponse = response.body()
+                    if (weatherResponse != null) {
+                        updateCurrentWeatherUI(weatherResponse)
+                    }
                 }
             }
-        }
+
+            override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
+                Log.e("WeatherActivity", "Failed to fetch current weather: ${t.message}")
+            }
+        })
     }
 
-    private fun updateWeatherUI(temperature: Double, description: String, humidity: Int, windSpeed: Double) {
-        // Display temperature in Celsius
-        val tempCelsius = temperature - 273.15
+    private fun updateCurrentWeatherUI(weatherResponse: WeatherResponse) {
+        binding.currentTemperatureTextView.text = "${weatherResponse.main.temp} °C"
+        val iconUrl = "https://openweathermap.org/img/wn/${weatherResponse.weather[0].icon}.png"
+        Glide.with(this).load(iconUrl).into(binding.currentWeatherIcon)
+    }
 
-        // Format wind speed to display in km/h
-        val windSpeedKmh = windSpeed * 3.6
+    private fun fetchPreviousDaysWeather() {
+        val apiKey = "1e8ec065460fe366dac1eb2948e53acc"
+        val call = weatherService.getPreviousDaysWeather(
+            lat = 19.0760, // Latitude for Mumbai
+            lon = 72.8777, // Longitude for Mumbai
+            exclude = "current,minutely,hourly,alerts",
+            apiKey = apiKey
+        )
 
-        // Update UI with weather data
-        binding.temperature.text = "${String.format("%.1f", tempCelsius)}°C"
-        binding.weatherDescription.text = description.replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase(
-                Locale.getDefault()
-            ) else it.toString()
-        }
-        binding.humidity.text = "Humidity: $humidity%"
-        binding.windSpeed.text = "Wind Speed: ${String.format("%.1f", windSpeedKmh)} km/h"
+        call.enqueue(object : Callback<OneCallResponse> {
+            override fun onResponse(call: Call<OneCallResponse>, response: Response<OneCallResponse>) {
+                if (response.isSuccessful) {
+                    val oneCallResponse = response.body()
+                    if (oneCallResponse != null) {
+                        updatePreviousDaysWeatherUI(oneCallResponse.daily)
+                    }
+                }
+            }
 
-        // Optionally, you can also display last updated time
-        val sdf = SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
-        val currentDate = sdf.format(Date())
-        binding.forecastDetails.text = "Last Updated: $currentDate"
+            override fun onFailure(call: Call<OneCallResponse>, t: Throwable) {
+                Log.e("WeatherActivity", "Failed to fetch previous days weather: ${t.message}")
+            }
+        })
+    }
+
+    private fun updatePreviousDaysWeatherUI(weatherList: List<DailyWeather>) {
+        val adapter = WeatherAdapter(weatherList)
+        binding.previousDaysRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.previousDaysRecyclerView.adapter = adapter
     }
 }
