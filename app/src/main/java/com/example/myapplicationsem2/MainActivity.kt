@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.example.myapplicationsem2.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setup Disease button
         binding.btnDiseaseDiagnosis.setOnClickListener {
-            val intent = Intent(this, DiseaseActivity::class.java)
+            val intent = Intent(this, DiseaseDiagnosisActivity::class.java)
             startActivity(intent)
         }
 

@@ -38,22 +38,22 @@ class MarketPricesActivity : AppCompatActivity() {
         val prices = mutableListOf<MarketPrice>()
         prices.add(
             MarketPrice(
-                "Crop 1",
+                "Corn",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128,
+                R.drawable.cornimg,
                 "₹120",
                 generateSampleData()
             )
         )
         prices.add(
             MarketPrice(
-                "Crop 2",
+                "Apples",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128,
+                R.drawable.appleimg,
                 "₹115",
                 generateSampleData()
             )

@@ -2,7 +2,7 @@
     <string name="app_name">AgriSmart Pro</string>
     <string name="crop_info">Crop Info</string>
     <string name="disease_diagnosis">Disease Diagnosis</string>
-    <string name="forum">Forum</string>
+    <string name="forum">Community</string>
     <string name="market_prices">Market Prices</string>
     <string name="notifications">Notifications</string>
     <string name="weather">Weather</string>
@@ -28,4 +28,17 @@
     <string name="password">password</string>
     <string name="username">username</string>
     <string name="app_tagline">Empowering Farmers, Enriching Harvests</string>
+    <string name="diagnosis_result">Result</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="enter_symptoms">List symptoms</string>
+
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="select_language">Select Language</string>
+    <string-array name="language_options">
+        <item>English</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>German</item>
+    </string-array>
 </resources>
