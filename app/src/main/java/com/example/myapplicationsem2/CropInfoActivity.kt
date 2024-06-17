@@ -34,102 +34,102 @@ class CropInfoActivity : AppCompatActivity() {
         val crops = mutableListOf<Crop>()
         crops.add(
             Crop(
-                "Crop 1",
+                "Apples",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.appleimg
             )
         )
         crops.add(
             Crop(
-                "Crop 2",
+                "Corn",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.cornimg
             )
         )
         crops.add(
             Crop(
-                "Crop 3",
+                "Tomato",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.tomato
             )
         )
         // Add more crops as needed
         crops.add(
             Crop(
-                "Crop 4",
+                "Onion",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.onions
             )
         )
         crops.add(
             Crop(
-                "Crop 5",
+                "Alphanso Mango",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.alphonsomango
             )
         )
         crops.add(
             Crop(
-                "Crop 6",
+                "Wheat",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.wheat
             )
         )
         crops.add(
             Crop(
-                "Crop 7",
+                "Eggplant",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.eggplant
             )
         )
         crops.add(
             Crop(
-                "Crop 8",
+                "Okra",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.okra
             )
         )
         crops.add(
             Crop(
-                "Crop 9",
+                "Cabbage",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.cabbage
             )
         )
         crops.add(
             Crop(
-                "Crop 10",
+                "Radish",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.radish
             )
         )
         crops.add(
             Crop(
-                "Crop 11",
+                "Bajra",
                 "What is Lorem Ipsum?\n" +
                         "\n" +
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                R.drawable.defaultcrop128
+                R.drawable.bajra
             )
         )
         crops.add(

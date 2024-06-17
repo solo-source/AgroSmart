@@ -149,6 +149,8 @@
             android:padding="20dp"
             android:text="@string/notifications"
             app:layout_columnWeight="1" />
+
+
     </androidx.gridlayout.widget.GridLayout>
 
     <!-- Bottom Navigation Menu -->
