@@ -5,10 +5,15 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
+import com.alan.alansdk.AlanConfig
+import com.alan.alansdk.button.AlanButton
 import com.example.myapplicationsem2.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    /// Add the alanButton variable
+    private var alanButton: AlanButton? = null
 
     private lateinit var binding: ActivityMainBinding
 
@@ -16,6 +21,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /// Set up the Alan AI button
+        val config = AlanConfig.builder().setProjectId("b368fc2ee22b92cfea2f63141b014f402e956eca572e1d8b807a3e2338fdd0dc/stage").build()
+        alanButton = findViewById(binding.alanButton.id)
+        alanButton?.initWithConfig(config)
 
         // Setup Search bar
         binding.searchBar.setOnClickListener {

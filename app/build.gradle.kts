@@ -93,6 +93,8 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.0")
+    // https://mvnrepository.com/artifact/org.greenrobot/eventbus
+    implementation("org.greenrobot:eventbus:3.1.1")
     /// Add Alan AI SDK dependency
     implementation ("app.alan:sdk:4.25.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
